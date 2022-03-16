@@ -86,16 +86,15 @@ def main():
         # '~/projects/def-sponsor00/data',
         train=False, transform=transform)
 
-    train_loader = torch.utils.data.DataLoader(train_data, batch_size=64)
-    test_loader = torch.utils.data.DataLoader(test_data, batch_size=1000)
+    train_loader = torch.utils.data.DataLoader(train_data, batch_size=50)
+    test_loader = torch.utils.data.DataLoader(test_data, batch_size=100)
     model = Net().to(device)
-    optimizer = optim.Adadelta(model.parameters(), lr=1.0)
+    optimizer = optim.Adadelta(model.parameters(), lr=0.1)
     scheduler = StepLR(optimizer, step_size=1, gamma=0.7)
 
     for epoch in range(1, epochs + 1):
         train(model, device, train_loader, optimizer, epoch)
         test(model, device, test_loader)
         scheduler.step()
-
 
 main()
