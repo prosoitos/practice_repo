@@ -1,1 +1,1 @@
-Bogus project to teach collaboration with Git through GitHub as part of WestGrid training.
+Bogus repo for Git workshops.
