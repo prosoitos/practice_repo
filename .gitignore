@@ -1,3 +1,6 @@
 data/
 output/
 hidden_file
+search_cache/
+search.qmd
+search.rmarkdown
